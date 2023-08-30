@@ -7,30 +7,38 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 400px; /* 設定內容框的寬度 */
+        }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 </head>
 <body>
 
-    <h2>Watt and dBm converter</h2>
-    <p style="margin: 0;">Author: Dustin_Chen, email: <a href="mailto:Dustin_Chen@compal.com" style="line-height: 1;">Dustin_Chen@compal.com</a> or <a href="mailto:chuhpsdustin@gmail.com" style="line-height: 1;">chuhpsdustin@gmail.com</a></p>
+    <div class="container">
+        <h2>Watt and dBm converter</h2>
+        <p style="margin: 0;">Author: Dustin_Chen, email: <a href="mailto:Dustin_Chen@compal.com" style="line-height: 1;">Dustin_Chen@compal.com</a> or <a href="mailto:chuhpsdustin@gmail.com" style="line-height: 1;">chuhpsdustin@gmail.com</a></p>
 
-    <ul>
-        <li><b>Watt to dBm formula：dBm = 10 * log10(Watt * 1000)</b>
-            <ul>
-                <li>input Watt：<input type="number" id="wattInput" placeholder="input Watt" oninput="calculateDBm()" value="5"></li>
-                <li>calculation：<span id="wattCalculation"></span></li>
-                <li>Result：<span id="dbmResult"></span></li>
-            </ul>
-        </li>
-        <br>
-        <li><b>dBm to W formula：W = 10^(dBm / 10) / 1000</b>
-            <ul>
-                <li>input dBm：<input type="number" id="dbmInput" placeholder="input dBm" oninput="calculateWatt()" value="37"></li>
-                <li>calculation：<span id="dbmCalculation"></span></li>
-                <li>Result：<span id="wattResult"></span></li>
-            </ul>
-        </li>
-    </ul>
+        <ul>
+            <li><b>Watt to dBm formula：\[ \text{dBm} = 10 \cdot \log_{10}(Watt \times 1000) \]</b>
+                <ul>
+                    <li>input Watt：<input type="number" id="wattInput" placeholder="input Watt" oninput="calculateDBm()" value="5"></li>
+                    <li>calculation：<span id="wattCalculation"></span></li>
+                    <li>Result：<span id="dbmResult"></span></li>
+                </ul>
+            </li>
+            <br>
+            <li><b>dBm to W formula：\[ \text{Watt} = 10^{(\text{dBm} / 10)} / 1000 \]</b>
+                <ul>
+                    <li>input dBm：<input type="number" id="dbmInput" placeholder="input dBm" oninput="calculateWatt()" value="37"></li>
+                    <li>calculation：<span id="dbmCalculation"></span></li>
+                    <li>Result：<span id="wattResult"></span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 
     <script>
         function calculateDBm() {
