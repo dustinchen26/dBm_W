@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>單位換算計算過程</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>瓦特（Watt）和分貝毫瓦（dBm）換算計算過程</h2>
+        <h3>瓦特轉換為分貝毫瓦：</h3>
+        <p>計算公式：dBm = 10 * log10(瓦特 * 1000)</p>
+        <ol>
+            <li>輸入瓦特：<input type="number" id="wattInput" placeholder="輸入瓦特" oninput="calculateDBm()"></li>
+            <li>計算過程：<span id="wattCalculation"></span></li>
+            <li>結果：<span id="dbmResult"></span></li>
+        </ol>
+
+        <h3>分貝毫瓦轉換為瓦特：</h3>
+        <p>計算公式：瓦特 = 10^(dBm / 10) / 1000</p>
+        <ol>
+            <li>輸入 dBm：<input type="number" id="dbmInput" placeholder="輸入 dBm" oninput="calculateWatt()"></li>
+            <li>計算過程：<span id="dbmCalculation"></span></li>
+            <li>結果：<span id="wattResult"></span></li>
+        </ol>
+    </div>
+
+    <script>
+        function calculateDBm() {
+            const wattInput = parseFloat(document.getElementById('wattInput').value);
+            const dbmCalculation = `10 * log10(${wattInput} * 1000)`;
+            const dbm = 10 * Math.log10(wattInput * 1000);
+            document.getElementById('wattCalculation').textContent = dbmCalculation;
+            document.getElementById('dbmResult').textContent = `${dbm.toFixed(2)} dBm`;
+        }
+
+        function calculateWatt() {
+            const dbmInput = parseFloat(document.getElementById('dbmInput').value);
+            const wattCalculation = `10^(${dbmInput} / 10) / 1000`;
+            const watt = Math.pow(10, (dbmInput / 10)) / 1000;
+            document.getElementById('dbmCalculation').textContent = wattCalculation;
+            document.getElementById('wattResult').textContent = `${watt.toFixed(6)} 瓦特`;
+        }
+    </script>
+</body>
+</html>
