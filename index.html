@@ -54,7 +54,7 @@
             const wattCalculation = `10^(${dbmInput} / 10) / 1000`;
             const watt = Math.pow(10, (dbmInput / 10)) / 1000;
             document.getElementById('dbmCalculation').textContent = wattCalculation;
-            document.getElementById('wattResult').textContent = `${watt.toFixed(6)} Watt`;
+            document.getElementById('wattResult').textContent = `${watt.toFixed(2)} Watt`;
         }
 
         // Initial calculations
