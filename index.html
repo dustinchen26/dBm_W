@@ -10,8 +10,12 @@
         .container {
             border: 1px solid #ccc;
             padding: 20px;
-            width: 400px; /* 設定內容框的寬度 */
+            width: 500px; /* 設定內容框的寬度 */
         }
+        .red-text {
+            color: red;
+        }		
+		
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 </head>
@@ -20,7 +24,23 @@
     <div class="container">
         <h2>Watt and dBm converter</h2>
         <p style="margin: 0;">Author: Dustin_Chen, email: <a href="mailto:Dustin_Chen@compal.com" style="line-height: 1;">Dustin_Chen@compal.com</a> or <a href="mailto:chuhpsdustin@gmail.com" style="line-height: 1;">chuhpsdustin@gmail.com</a></p>
-
+        <ul>
+            <li><b>Example:</b><br>
+					<ul>
+						<li>1W = 1000 mW </li>
+						<li class="red-text">24 dBm = 250 mW<br></li>
+							<ul>
+								<li>250mW/channel 室內O-RU, 半徑30m。
+								</li>
+							</ul>
+						<li class="red-text">37 dBm = 5 W <br></li>
+							<ul>
+								<li>5W/channel 戶外O-RU, 可達200-300m或1.5-2Km。
+								</li>
+							</ul>
+					</ul>
+            </li>
+        </ul>
         <ul>
             <li><b>Watt to dBm formula：\[ \text{dBm} = 10 \cdot \log_{10}(Watt \times 1000) \]</b>
                 <ul>
