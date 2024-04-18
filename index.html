@@ -8,11 +8,11 @@
             font-size: 14px;
             margin: 0; /* 清除預設的 body 外邊距 */
         }
-		
+        
         h2 {
             margin-top: 0; /* 將標題的上邊距設置為 0 */
-        }		
-		
+        }       
+        
         .container {
             border: 1px solid transparent; /* 變更邊框為透明 */
             padding: 20px;
@@ -20,8 +20,14 @@
         }
         .red-text {
             color: red;
-        }		
-		
+        }       
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 </head>
@@ -31,13 +37,13 @@
         <p style="margin: 0;">Author: Dustin_Chen, email: <a href="mailto:Dustin_Chen@compal.com" style="line-height: 1;">Dustin_Chen@compal.com</a> or <a href="mailto:chuhpsdustin@gmail.com" style="line-height: 1;">chuhpsdustin@gmail.com</a></p>
         <ul>
             <li><b>Example:</b><br>
-					<ul>
-						<li>1W = 1000 mW </li>
-						<li>23 dBm = 200 mW = 0.2 W</li>
-						<li>24 dBm = 250 mW = 0.25 W</li>
-						<li>30 dBm = 1 W </li>
-						<li>37 dBm = 5 W </li>
-					</ul>
+                    <ul>
+                        <li>1W = 1000 mW </li>
+                        <li>23 dBm = 200 mW = 0.2 W</li>
+                        <li>24 dBm = 250 mW = 0.25 W</li>
+                        <li>30 dBm = 1 W </li>
+                        <li>37 dBm = 5 W </li>
+                    </ul>
             </li>
         </ul>
         <ul>
@@ -57,6 +63,29 @@
                 </ul>
             </li>
         </ul>
+
+        <h3>Conversion Table</h3>
+        <table border="1">
+            <tr>
+                <th>dBm</th>
+                <script>
+                    // Generate dBm values
+                    for (let i = 37; i >= 23; i--) {
+                        document.write(`<td>${i} </td>`);
+                    }
+                </script>
+            </tr>
+            <tr>
+                <th>Watt</th>
+                <script>
+                    // Generate Watt values
+                    for (let i = 37; i >= 23; i--) {
+                        const watt = Math.pow(10, (i / 10)) / 1000;
+                        document.write(`<td>${watt.toFixed(3)} </td>`);
+                    }
+                </script>
+            </tr>
+        </table>
     </div>
 
     <script>
